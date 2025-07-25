@@ -1,14 +1,12 @@
 function volume_sphere() {
 	let radiusVal = parseFloat(document.getElementById('radius').value);
 	let volumeVal = 0;
-	if (isNaN(radiusVal) || radiusVal == '') {
-		
-		document.getElementById('volume').value = ;
-		return;
+	if (typeof radiusVal === 'string' || radiusVal < 0) {
+		return NaN;
 	}
+	
 	volumeVal = Math.PI * (4/3) * Math.pow(radiusVal,3);
 	document.getElementById('volume').value = volumeVal.toFixed(4);
-	
 } 
 
 document.getElementById('submit').addEventListener('click', volume_sphere);
